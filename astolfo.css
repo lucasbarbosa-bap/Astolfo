@@ -103,7 +103,7 @@ div.Galeria_project_chika figcaption{
 
 
 
-@media (max-width: 700px){
+@media (max-width: 720px){
 
     h1{
         font-size: 80px;
@@ -112,6 +112,18 @@ div.Galeria_project_chika figcaption{
         max-height: 100%;
         max-width: 100%;
     }
+
+    div.Galeria_project_chika figure img{ height: 200px}
+    div.Galeria_project_chika figure:hover{transform: scale(1.2);}
+
+    
+    div.Galeria_project_chika{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 20px 5px;
+    }
+
     
     div.PesquisarDeliciosidades{
     max-width: 300px;
