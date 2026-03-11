@@ -1,9 +1,10 @@
 let PaginaAtual = 0;
+let TagAtual = "astolfo_(fate)";
 
 async function BuscarFemboys() {
     console.log("Testando femboys");
 
-    const RespostaApi = await fetch(`https://corsproxy.io/?https://safebooru.org/index.php?page=dapi&s=post&q=index&json=1&limit=6&tags=astolfo_(fate)&pid=${PaginaAtual}`);
+    const RespostaApi = await fetch(`https://corsproxy.io/?https://safebooru.org/index.php?page=dapi&s=post&q=index&json=1&limit=6&tags=${TagAtual}&pid=${PaginaAtual}`);
 
     const dados = await RespostaApi.json();
 
@@ -23,29 +24,43 @@ function TrocarFemboys(dados) {
     }
 }
 
+function FazerPesquisa() {
+    TagAtual = document.getElementById("EntradaBuscas").value;
+    PaginaAtual = 0;
+
+    document.getElementById("EntradaBuscas").value = "";
+
+    BuscarFemboys();
+}
+
 
 const btv = document.getElementById("BtVoltar");
 const bta = document.getElementById("BtAvancar");
 
-btv.disabled = true
+btv.disabled = true;
 
 function VoltarPagina(){
-    PaginaAtual -= 1
-    bta.disabled = false
+    PaginaAtual -= 1;
+    bta.disabled = false;
 
     if (PaginaAtual == 0) {btv.disabled = true};
-    BuscarFemboys()
+    BuscarFemboys();
 }
 
 function AvancarPagina(){
-    PaginaAtual += 1
-    btv.disabled = false
+    PaginaAtual += 1;
+    btv.disabled = false;
 
     //if (PaginaAtual == 4) {bta.disabled = true};
-    BuscarFemboys() 
+    BuscarFemboys();
 }
 
-document.getElementById("BtVoltar").addEventListener("click", VoltarPagina)
-document.getElementById("BtAvancar").addEventListener("click", AvancarPagina)
-BuscarFemboys()
+document.getElementById("BtVoltar").addEventListener("click", VoltarPagina);
+document.getElementById("BtAvancar").addEventListener("click", AvancarPagina);
+
+const BotoesPesquisa = document.querySelectorAll(".BtSearch");
+BotoesPesquisa.forEach(botao => {
+    botao.addEventListener("click", FazerPesquisa);
+});
+BuscarFemboys();
 
