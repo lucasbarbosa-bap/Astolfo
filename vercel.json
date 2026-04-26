@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/safebooru",
+      "destination": "https://safebooru.org/index.php"
+    }
+  ]
+}
