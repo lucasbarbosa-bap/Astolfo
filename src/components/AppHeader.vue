@@ -1,5 +1,9 @@
 <script setup>
+import router from '@/router';
 import { ref } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+
+const route = useRoute()
 
 const tagAtual = ref("")
 
@@ -15,7 +19,7 @@ function fazerPesquisa() {
     <header>
         <h1><strong>Astolfo34</strong></h1>
 
-        <figure>
+        <figure v-if="route.path === '/'">
             <img src="/astolfo.png" alt="">
             <figcaption>Astolfo 34 : If it's Astolfo there is porn of it. If not, start uploading.</figcaption>
         </figure>

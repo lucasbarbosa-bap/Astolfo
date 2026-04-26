@@ -5,8 +5,6 @@ import AppHeader from '@/components/AppHeader.vue';
 
 <template>
   <main>
-    <AppHeader />
-
-    <AppFooter />
+    <h2>Home teste</h2>
   </main>
 </template>
