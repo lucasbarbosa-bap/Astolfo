@@ -4,7 +4,7 @@ defineProps(['urlFemboy'])
 
 <template>
     <figure>
-        <img src="/Ibuki_Mioda_Halfbody_Sprite_29.png" alt="Tela de acerto do programa mostrando o feedback visual com a personagem ibuki mioda" >
+        <img :src="urlFemboy" alt="Tela de acerto do programa mostrando o feedback visual com a personagem ibuki mioda" >
         <!--<figcaption>A interface principal funcionando! Quando você acerta, a barra de combo rosa enche e a Ibuki aparece pra dar aquela incentivada.</figcaption>-->
     </figure>
 
