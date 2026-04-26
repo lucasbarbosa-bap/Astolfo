@@ -1,6 +1,6 @@
 <script setup>
 import ImageCard from '@/components/ImageCard.vue';
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute()
@@ -37,6 +37,8 @@ function voltarPagina() {
         console.log(PaginaAtual.value);
     }
 }
+
+watch(() => route.query.tag, () => {PaginaAtual.value=0; BuscarFemboys()})
 
 onMounted(() =>
     BuscarFemboys()
