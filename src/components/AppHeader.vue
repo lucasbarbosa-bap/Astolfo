@@ -1,14 +1,16 @@
 <script setup>
-import router from '@/router';
 import { ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
+const router = useRouter()
 const route = useRoute()
 
 const tagAtual = ref("")
 
 function fazerPesquisa() {
     console.log("Pesquisando por:", tagAtual.value);
+
+    router.push({ path:'/post', query: {tag: tagAtual.value}})
 
     tagAtual.value = ""
 }
@@ -33,7 +35,7 @@ function fazerPesquisa() {
         
         <search>
             <input type="text" v-model="tagAtual" placeholder="Digite a Tag (Ex: illyasviel_von_einzbern )">
-            <button @click="fazerPesquisa">Search</button>
+            <button type="button" @click="fazerPesquisa">Search</button>
         </search>
             
     </header>
