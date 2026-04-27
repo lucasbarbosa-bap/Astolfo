@@ -3,6 +3,10 @@
     {
       "source": "/api/safebooru",
       "destination": "https://safebooru.org/index.php"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
