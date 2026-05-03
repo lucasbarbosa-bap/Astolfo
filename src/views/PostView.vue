@@ -63,7 +63,7 @@ onMounted(() =>
         <h2>Galeria de deliciosidades: </h2>
         
         <div class="Galeria_project_chika">
-            <ImageCard v-for="femboy in gavetaFemboys" :key="femboy.id" :urlFemboy="femboy.file_url" @femboyClicado="mostrarIbuki(femboy.file_url)" />
+            <ImageCard v-for="femboy in gavetaFemboys" :key="femboy.id" :urlFemboy="femboy.sample_url" @femboyClicado="mostrarIbuki(femboy.file_url)" />
         </div>
 
         <div class="botoes">
