@@ -17,7 +17,7 @@ const modalAberto = ref(false)
 async function BuscarFemboys() {
     console.log("Testando femboys");
 
-    const RespostaApi = await fetch(`/api/safebooru?page=dapi&s=post&q=index&json=1&limit=6&tags=${route.query.tag}&pid=${PaginaAtual.value}`);
+    const RespostaApi = await fetch(`/api/safebooru?page=dapi&s=post&q=index&json=1&limit=9&tags=${route.query.tag}&pid=${PaginaAtual.value}`);
 
     const dados = await RespostaApi.json();
 
