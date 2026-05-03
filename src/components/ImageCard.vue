@@ -4,12 +4,18 @@ defineProps(['urlFemboy'])
 
 <template>
     <figure>
-        <img :src="urlFemboy" alt="Tela de acerto do programa mostrando o feedback visual com a personagem ibuki mioda" >
+        <img :src="urlFemboy" alt="Tela de acerto do programa mostrando o feedback visual com a personagem ibuki mioda" @click="$emit('femboyClicado', urlFemboy)" >
         <!--<figcaption>A interface principal funcionando! Quando você acerta, a barra de combo rosa enche e a Ibuki aparece pra dar aquela incentivada.</figcaption>-->
     </figure>
 
     <figure>
-        <img src="/mikan_sprite.png" alt="Tela de acerto do programa mostrando o feedback visual com a personagem ibuki mioda" >
+        <img src="/mikan_sprite.png" alt="Tela de acerto do programa mostrando o feedback visual com a personagem ibuki mioda"  >
         <!--<figcaption>A interface principal funcionando! Quando você acerta, a barra de combo rosa enche e a Ibuki aparece pra dar aquela incentivada.</figcaption>-->
     </figure>
 </template>
+
+<style scoped>
+    img{
+        cursor: pointer;
+    }
+</style>

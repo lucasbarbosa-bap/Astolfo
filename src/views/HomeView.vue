@@ -1,17 +1,11 @@
 <script setup>
 import AppFooter from '@/components/AppFooter.vue';
 import AppHeader from '@/components/AppHeader.vue';
-import ImageModal from '@/components/ImageModal.vue';
 import { ref } from 'vue';
-
 
 const mostrar = ref(false)
 
-function mostrarIbuki() {
-  mostrar.value = !mostrar.value
 
-  console.log(mostrar.value)
-}
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup>
-defineProps('')
+defineProps(['urlFemboy'])
 
 const emit = defineEmits(['fechar'])
 </script>
@@ -7,7 +7,7 @@ const emit = defineEmits(['fechar'])
 <template>
     <figure>
         <button @click="() => {emit('fechar')}">X</button>
-        <img src="/Ibuki_Mioda_Halfbody_Sprite_29.png" alt="">
+        <img :src="urlFemboy" alt="">
     </figure>
 </template>
 
@@ -26,7 +26,7 @@ const emit = defineEmits(['fechar'])
 
         width: 100vh;
         height: 100vh;
-        background-color: aqua;
+        background-color: rgba(152, 38, 76, 0.863);
     }
 
     figure img{

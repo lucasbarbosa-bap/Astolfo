@@ -2,12 +2,17 @@
 import ImageCard from '@/components/ImageCard.vue';
 import { ref, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
+import ImageModal from '@/components/ImageModal.vue';
+
 
 const route = useRoute()
 
 const gavetaFemboys = ref([])
 
 const PaginaAtual = ref(0)
+
+const femboySelecionado = ref('')
+const modalAberto = ref(false)
 
 async function BuscarFemboys() {
     console.log("Testando femboys");
@@ -38,6 +43,13 @@ function voltarPagina() {
     }
 }
 
+function mostrarIbuki(sla) {
+    femboySelecionado.value = sla
+    modalAberto.value = !modalAberto.value
+
+    console.log("img Clicada", femboySelecionado)
+}
+
 watch(() => route.query.tag, () => {PaginaAtual.value=0; BuscarFemboys()})
 
 onMounted(() =>
@@ -51,12 +63,14 @@ onMounted(() =>
         <h2>Galeria de deliciosidades: </h2>
         
         <div class="Galeria_project_chika">
-            <ImageCard v-for="femboy in gavetaFemboys" :key="femboy.id" :urlFemboy="femboy.file_url" />
+            <ImageCard v-for="femboy in gavetaFemboys" :key="femboy.id" :urlFemboy="femboy.file_url" @femboyClicado="mostrarIbuki(femboy.file_url)" />
         </div>
 
         <div class="botoes">
                 <button type="button" @click="voltarPagina" :disabled="PaginaAtual === 0">VOLTAR</button>
                 <button type="button" @click="avancarPagina">AVANÇAR</button>
         </div>
+
+        <ImageModal v-if="modalAberto" :urlFemboy="femboySelecionado" @fechar="modalAberto = false" />
     </main>
 </template>
