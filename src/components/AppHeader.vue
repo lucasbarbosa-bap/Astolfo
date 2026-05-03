@@ -69,3 +69,13 @@ function selecionarSugestao(femboySugerido) {
             
     </header>
 </template>
+
+<style scoped>
+    p{
+    cursor: pointer;
+    }
+    p:hover{
+        background-color: rgb(152, 38, 76);
+        color: white;
+    }
+</style>
