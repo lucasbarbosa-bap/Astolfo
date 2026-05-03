@@ -43,7 +43,8 @@ const emit = defineEmits(['fechar'])
     @media (max-width: 900px){
         figure{
             width: 90vw;
-            height: 90vh;
+            height: auto;
+            padding: 40px 0;
         }
     }
 </style>
