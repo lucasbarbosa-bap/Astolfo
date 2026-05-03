@@ -12,26 +12,31 @@ const emit = defineEmits(['fechar'])
 </template>
 
 <style scoped>
-    button{
-        display: flex;
-        margin-left: auto;
+    button {
+        position: absolute;
+        top: 0px;          
+        right: 0px;        
+        z-index: 10;
     }
+
     figure{
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 95vh;
+        height: 95vh;
         z-index: 999;
 
-        width: 100vh;
-        height: 100vh;
         background-color: rgba(152, 38, 76, 0.863);
+
+        border-radius: 10px;
+        margin: 0;
     }
 
     figure img{
-        width: 100%;
-        height: 100%;
+        width: 90%;
+        height: 90%;
         object-fit: contain;
     }
 </style>
